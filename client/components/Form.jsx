@@ -51,6 +51,9 @@ function Form () {
 
   return (
     <>
+
+<h2>Enter Student Details:</h2>
+
 <form onSubmit={handleSubmit}>
 <div>
   <label htmlFor= 'name'>First Name:</label>

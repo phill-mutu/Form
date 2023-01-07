@@ -16,9 +16,8 @@ function App ({ dispatch }) {
   return (
     <>
       <div>
-        <h2>Student Details</h2>
         <Route path='/' component={Form} />
-        <Route path='/students' component={StudentsView} />
+        <Route path='/' component={StudentsView} />
 
       </div>
     </>
