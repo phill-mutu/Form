@@ -15,9 +15,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    // db func
-    // then
-    // res.json
+    db.addStudent(req.body)
+    .then(idArr => {
+        res.json({ newId: idArr[0] })
+    })
 })
 
 module.exports = router
