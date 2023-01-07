@@ -9,6 +9,9 @@ router.get('/', (req, res) => {
     .then(students => {
         res.json(students)
     })
+    .catch(err => {
+        res.send(err.message)
+    })
 })
 
 module.exports = router
