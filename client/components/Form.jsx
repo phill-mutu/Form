@@ -22,13 +22,7 @@ function Form () {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('name = ' + formData.name)
-    console.log('surname = ' + formData.surname)
-    console.log('email = ' + formData.email)
-    console.log('dob = ' + formData.dob)
-    console.log('username = ' + formData.username)
-    console.log('password = ' + formData.password)
-    console.log('age = ' + calculateAge(formData.dob))
+      console.log(formData)
     setFormData({
     name: '',
     surname: '',
@@ -43,7 +37,8 @@ function Form () {
     // console.log(e.target.name)
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      age: calculateAge(formData.dob) 
     })
   }
 
