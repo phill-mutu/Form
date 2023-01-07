@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import students from './students'
+import students from './studentReducers'
 
 export default combineReducers ({
   students
