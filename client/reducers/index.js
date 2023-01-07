@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-// import stuff from './stuff'
+import students from './students'
 
 export default combineReducers ({
-  //stuff
+  students
 })
