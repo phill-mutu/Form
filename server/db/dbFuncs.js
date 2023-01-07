@@ -2,7 +2,7 @@ const connection = require('./connection')
 
 function getAllStudents(db = connection){
     return db('students')
-    .select
+    .select()
 }
 
 function addStudent(){
