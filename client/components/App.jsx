@@ -11,8 +11,9 @@ function App () {
     <>
       <div>
         <h2>Student Details</h2>
-        Form
-        StudentsView
+        <Route path='/' component={Form} />
+        <Route path='/students' component={StudentsView} />
+
       </div>
     </>
   )
