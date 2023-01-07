@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import {} from 'react-router-dom'
+import { connect} from 'react-redux'
+
+import { addStudent } from '../actions/studentActions'
 
 const initialState = {
   name: '',
@@ -16,13 +19,13 @@ const calculateAge = (birthday) => {
   return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
-function Form () {
-
+function Form (props) {
+  const { dispatch } = props
   const [formData, setFormData] = useState (initialState)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-      console.log(formData)
+      // console.log(formData)
     setFormData({
     name: '',
     surname: '',
@@ -31,6 +34,8 @@ function Form () {
     username: '',
     password: '',
     age: ''})
+
+    saveDetails(formData)
   }
 
   const handleChange = (e) => {
@@ -42,6 +47,11 @@ function Form () {
     })
   }
 
+  const saveDetails = (formData) => {
+    dispatch(addStudent(formData))
+    // const {name, surname, email, dob, username, password, age} = formData
+  }
+
   const { name, surname, email, dob, username, password, age} = formData
 
   return (
@@ -50,7 +60,7 @@ function Form () {
 <h2>Enter Student Details:</h2>
 
 <form onSubmit={handleSubmit}>
-<div>
+  <div>
   <label htmlFor= 'name'>First Name:</label>
   <input
         type='text'
@@ -59,8 +69,8 @@ function Form () {
         name='name'
         value={name}
         onChange={handleChange}/>
-</div>
-<div>
+  </div>
+  <div>
   <label htmlFor= 'surname'>Surname:</label>
   <input
         type='text'
@@ -69,8 +79,8 @@ function Form () {
         name='surname'
         value={surname}
         onChange={handleChange}/>
-</div>
-<div>
+  </div>
+  <div>
   <label htmlFor= 'email'>Email:</label>
   <input
         type='text'
@@ -79,8 +89,8 @@ function Form () {
         name='email'
         value={email}
         onChange={handleChange}/>
-</div>
-<div>
+  </div>
+  <div>
   <label htmlFor= 'dob'>Date of Birth:</label>
   <input
         type='date'
@@ -89,8 +99,8 @@ function Form () {
         name='dob'
         value={dob}
         onChange={handleChange}/>
-</div>
-<div>
+  </div>
+  <div>
   <label htmlFor= 'username'>Username:</label>
   <input
         type='text'
@@ -99,8 +109,8 @@ function Form () {
         name='username'
         value={username}
         onChange={handleChange}/>
-</div>
-<div>
+  </div>
+  <div>
   <label htmlFor= 'password'>Password:</label>
   <input
         type='text'
@@ -109,13 +119,14 @@ function Form () {
         name='password'
         value={password}
         onChange={handleChange}/>
-</div>
+  </div>
 
-<button>Submit</button>
+  <button>Submit</button>
+
 
 </form>
 </>
   )
 }
 
-export default Form
+export default connect()(Form)

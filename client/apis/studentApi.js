@@ -6,3 +6,9 @@ export function fetchAllStudents() {
     .then(response => response.body)
 }
 
+export function postStudent (newStudent) {
+    return request
+    .post('/api/v1/students')
+    .send(newStudent)
+    .then(res => res.body)
+}
