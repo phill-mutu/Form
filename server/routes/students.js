@@ -14,4 +14,10 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    // db func
+    // then
+    // res.json
+})
+
 module.exports = router

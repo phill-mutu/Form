@@ -5,7 +5,9 @@ function getAllStudents(db = connection){
     .select()
 }
 
-function addStudent(){
+function addStudent(newStudent, db = connection){
+    return db('students')
+    .insert(newStudent)
     
 }
 

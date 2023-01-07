@@ -39,6 +39,8 @@ export function addStudent (name, surname, email, dob, username, password, age) 
             console.log('yay', mystery)
 
         })
-
+        //api call
+        //then
+        //dispatch to reducer
     }
 }
