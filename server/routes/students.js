@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
     db.addStudent(req.body)
     .then(idArr => {
         res.json({ newId: idArr[0] })
+        // console.log(idArr[0])
     })
 })
 

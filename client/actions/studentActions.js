@@ -30,25 +30,12 @@ export function getAllStudentsThunk() {
     }
 }
 
-export function addStudent (name, surname, email, dob, username, password, age) {
-    const newStudent = {
-        name, 
-        surname, 
-        email, 
-        dob, 
-        username, 
-        password, 
-        age
-    }
-
+export function addStudent (newStudent) {
+    console.log(newStudent)
     return (dispatch) => {
         postStudent(newStudent)
-        .then((obj) => {
-            const { newId } = obj
-            newStudent.id = newId
 
             dispatch(saveOneStudent(newStudent))
 
-        })
     }
 }
