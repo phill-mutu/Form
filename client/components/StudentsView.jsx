@@ -1,6 +1,13 @@
 import React from "react"
 import { connect } from 'react-redux'
 
+function reverseDateOfBirth (dob) {
+  const arr = dob.split('')
+  const newArr = [arr[8],arr[2],arr[7],arr[5],arr[6],arr[4],arr[0],arr[1],arr[2],arr[3]]
+    
+  return newArr
+}
+
 function StudentsView (props) {
   const { students } = props
 
@@ -27,10 +34,11 @@ function StudentsView (props) {
                                       <td>{student.name}</td>
                                       <td>{student.surname}</td>
                                       <td>{student.email}</td>
-                                      <td>{student.dob}</td>
+                                      <td>{reverseDateOfBirth(student.dob)}</td>
                                       <td>{student.username}</td>
                                       <td>{student.password}</td>
                                       <td>{student.age}</td>
+
                                     </tr>)} 
           </tbody>
 
