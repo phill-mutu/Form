@@ -3,23 +3,40 @@ import { connect } from 'react-redux'
 
 function StudentsView (props) {
   const { students } = props
-  
+
     return (
       <>
         <div>
           <h2>Student Details DB:</h2>
-
-          <ul>
-            {students.map(student => <li key={student.id}>{student.name}
-                                                          {student.surname}
-                                                          {student.email}
-                                                          {student.dob}
-                                                          {student.username}
-                                                          {student.password}
-                                                          {student.age}</li>)}
-          </ul>
-         
         </div>
+
+        <div>
+        <table>
+          <tbody>
+            <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Age</th>
+            </tr>
+
+            {students.map(student => <tr key={student.id}>
+                                      <td>{student.name}</td>
+                                      <td>{student.surname}</td>
+                                      <td>{student.email}</td>
+                                      <td>{student.dob}</td>
+                                      <td>{student.username}</td>
+                                      <td>{student.password}</td>
+                                      <td>{student.age}</td>
+                                    </tr>)} 
+          </tbody>
+
+      </table>
+    </div>
+
       </>
     )
   }
