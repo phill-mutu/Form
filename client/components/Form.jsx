@@ -125,7 +125,7 @@ function validateEmail(email) {
       <div>
         <label htmlFor= 'password'>Password:</label>
         <input
-              type='text'
+              type='password'
               placeholder='Password'
               id='password'
               name='password'
